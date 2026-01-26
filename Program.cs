@@ -9,7 +9,7 @@ namespace prj0006 {
       static void Main() {
          Console.ForegroundColor = ConsoleColor.DarkCyan;
          Console.WriteLine("**********************************************************************");
-         Console.WriteLine("*                     Checador de Números Primos                     *");
+         Console.WriteLine("                      Checador de Números Primos                      ");
          Console.WriteLine("**********************************************************************\n");
          Console.ResetColor();
 
@@ -22,16 +22,22 @@ namespace prj0006 {
             Console.WriteLine();
             return;
          } else {
-            if (!proceed | number < 1) {
-               Console.WriteLine("\nENTRADA INVÁLIDA!");
+            if (!proceed || number < 1) {
+               Console.ForegroundColor = ConsoleColor.DarkYellow;
+               Console.WriteLine("\nENTRADA INVÁLIDA! Tente novamente.");
+               Console.ResetColor();
                goto start;
             } else {
                bool prime = IsPrime(number);
                if (prime) {
-                  Console.WriteLine($"\nO NÚMERO {number} É PRIMO!");
+                  Console.ForegroundColor = ConsoleColor.DarkGreen;
+                  Console.WriteLine($"\nO número {number} é primo!");
+                  Console.ResetColor();
                   goto start;
                } else {
-                  Console.WriteLine($"\nO NÚMERO {number} NÃO É PRIMO!");
+                  Console.ForegroundColor = ConsoleColor.Red;
+                  Console.WriteLine($"\nO número {number} não é primo!");
+                  Console.ResetColor();
                   goto start;
                }
             }
