@@ -23,7 +23,7 @@ namespace prj0006 {
             return;
          } else {
             if (!proceed || number < 1) {
-               Console.ForegroundColor = ConsoleColor.DarkYellow;
+               Console.ForegroundColor = ConsoleColor.Red;
                Console.WriteLine("\nENTRADA INVÁLIDA! Tente novamente.");
                Console.ResetColor();
                goto start;
@@ -35,7 +35,7 @@ namespace prj0006 {
                   Console.ResetColor();
                   goto start;
                } else {
-                  Console.ForegroundColor = ConsoleColor.Red;
+                  Console.ForegroundColor = ConsoleColor.DarkYellow;
                   Console.WriteLine($"\nO número {number} não é primo!");
                   Console.ResetColor();
                   goto start;
